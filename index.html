@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        :root{
+            --tran: transition: all 0.3s linear;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        .main_div{
+            width: 100vw;
+            height: 300px;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            display: grid;
+            place-items: center;
+            background-color: hsl(105, 54%, 43%);
+        }
+        a{
+            text-transform: uppercase;
+            /* text-decoration: none; */
+            font-size: 4rem;
+            padding: 1.6px 3.2px;
+            border: .1rem solid #110af0;
+            font-family: 'Dosis', sans-serif;
+            color: #1e272e;
+            position: relative;
+            z-index: 1;
+            /* transition: var(--tran) */
+            transition: all 0.3s linear;
+            overflow: hidden;
+        }
+        a::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #1e272e;
+            width: 100%;
+            height: 100%;
+            transform: translateX(-100%);
+            transition: all 0.3s linear;
+            
+           
+        }
+        a:hover::before{
+           transform: translateX(0);
+           z-index: -1;
+        }
+        a:hover{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_div">
+        <a>Thapa</a>
+    </div>
+</body>
+</html>
